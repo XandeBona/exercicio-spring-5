@@ -1,0 +1,22 @@
+meta {
+  name: POST Professor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/professores
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nome": "Roger Machado",
+    "disciplina": "Ciencias"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

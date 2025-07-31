@@ -1,12 +1,32 @@
 package com.escola.salas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
 public class Professor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String disciplina;
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Aluno> alunos = new ArrayList<>();
 
     public Professor() {
 
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 
     public Integer getId() {

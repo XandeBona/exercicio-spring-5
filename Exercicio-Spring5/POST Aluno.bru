@@ -1,0 +1,22 @@
+meta {
+  name: POST Aluno
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/professores/2/aluno
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nome": "CR7",
+    "matricula": "22345678901"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

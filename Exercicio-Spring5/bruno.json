@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Exercicio-Spring5",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
